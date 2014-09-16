@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get 'students/index'
+
+  get 'students/create'
+
+  get 'students/new'
+
+  get 'students/edit'
+
+  get 'students/show'
+
+  get 'students/update'
+
   get 'welcome/index'
 
   resources :students

@@ -1,2 +1,38 @@
 <h1>Students#index</h1>
 <p>Find me in app/views/students/index.html.erb</p>
+
+<table>
+
+	<tr>
+
+		<td>ID</td>
+		<td>Name</td>
+		<td>Dept</td>
+
+	</tr>
+
+	<% @students.each do |student| %>
+
+	<tr>
+		<td><%= student.id %></td>
+		<td><%= student.name %></td>
+		<td><%= student.dept %></td>
+		<td><%= link_to 'See', student_path(student) %></td>
+		<td><%= link_to 'Edit', edit_student_path(student) %></td>
+
+		<td>
+
+			<%= form_for :students, method: :delete, url: student_path(student) do |f| %>
+
+				<%= f.submit "Delete" %>
+
+			<% end %>
+
+		</td>
+
+	</tr>
+
+
+	<% end %>
+
+</table>

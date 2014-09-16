@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
   def index
+    @students = Student.all
   end
 
   def create
@@ -21,6 +22,11 @@ class StudentsController < ApplicationController
   end
 
   def update
+  end
+
+  def destroy
+    Student.delete(params[:id])
+    # render plain: "You wanna destroy me?"
   end
 
   private
